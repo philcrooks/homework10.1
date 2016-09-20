@@ -157,7 +157,7 @@ var outerFunction = function(){
   var innerFunction = function(){
     console.log("On entry innerFunction thinks murderer is:", murderer);
     murderer = 'valerie';
-    console.log("On exit innerFunction thinks murderer to:", murderer);
+    console.log("On exit innerFunction thinks murderer is:", murderer);
   }
 
   console.log("On entry outerFunction thinks murderer is:", murderer);
@@ -184,7 +184,7 @@ var outerFunction = function(){
   var innerFunction = function(){
     console.log("On entry innerFunction thinks murderer is:", murderer);
     murderer = 'valerie';
-    console.log("On exit innerFunction thinks murderer to:", murderer);
+    console.log("On exit innerFunction thinks murderer is:", murderer);
   }
 
   console.log("On entry outerFunction thinks murderer is:", murderer);
@@ -194,5 +194,5 @@ var outerFunction = function(){
 }
 
 var myFunction = outerFunction();
-console.log("outerFunction has returned, calling anotherFunction");
+console.log("outerFunction has returned... calling anotherFunction()");
 console.log('the murderer is ' + anotherFunction(myFunction));
