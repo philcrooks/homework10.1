@@ -141,7 +141,7 @@ console.log('the murderer is ' + outerFunction());
 // Prediction: the murderer is valerie
 // Actual: as prediction but this is far from obvious - this is a closure!!!
 
-// THe following suggestes the binding between names and values is static
+// The following is an experiment
 
 var anotherFunction = function (aFunction) {
   var murderer = 'rick';
