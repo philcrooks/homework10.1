@@ -167,3 +167,32 @@ var outerFunction = function(){
 }
 
 console.log('the murderer is ' + outerFunction());
+
+// Another experiment:
+
+var anotherFunction = function (aFunction) {
+  var murderer = 'rick';
+  console.log("On entry anotherFunction thinks murderer is:", murderer);
+  aFunction();
+  console.log("On exit anotherFunction thinks murderer is:", murderer);
+  return murderer;
+}
+
+var outerFunction = function(){
+  var murderer = 'marc';
+
+  var innerFunction = function(){
+    console.log("On entry innerFunction thinks murderer is:", murderer);
+    murderer = 'valerie';
+    console.log("On exit innerFunction thinks murderer to:", murderer);
+  }
+
+  console.log("On entry outerFunction thinks murderer is:", murderer);
+  // Doing this seems a little dodgy but innerFunction will be created in global space
+  // Should exist when outFunction exits
+  return innerFunction; 
+}
+
+var myFunction = outerFunction();
+console.log("outerFunction has returned, calling anotherFunction");
+console.log('the murderer is ' + anotherFunction(myFunction));
